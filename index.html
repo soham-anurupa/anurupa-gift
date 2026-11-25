@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Anurupa 🖤🌼</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #713b61, #190e27 75%);
+  color: white;
+  font-family: Georgia, serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 35px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: #ffd5e8;
+  text-shadow: 0 0 15px #ff78b6;
+  font-size: 28px;
+}
+
+.subtitle {
+  color: #f5d5e8;
+  margin-bottom: 45px;
+}
+
+.stage {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 900px;
+}
+
+.gift {
+  position: relative;
+  width: 150px;
+  height: 115px;
+  cursor: pointer;
+  animation: floating 2s infinite ease-in-out;
+}
+
+@keyframes floating {
+  50% { transform: translateY(-12px); }
+}
+
+.base {
+  position: absolute;
+  bottom: 0;
+  width: 150px;
+  height: 95px;
+  background: linear-gradient(135deg,#ff9cbd,#bd245e);
+  border-radius: 5px;
+  box-shadow: 0 12px 30px #0008;
+}
+
+.ribbon {
+  position: absolute;
+  left: 64px;
+  height: 100%;
+  width: 22px;
+  background: #ffe7a9;
+}
+
+.ribbon:after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 15px;
+  background: #ffe7a9;
+  top: 35px;
+  left: -64px;
+}
+
+.lid {
+  position: absolute;
+  top: 0;
+  left: -6px;
+  width: 162px;
+  height: 28px;
+  background: linear-gradient(135deg,#ffb2ce,#d62c70);
+  border-radius: 5px;
+  z-index: 3;
+  transform-origin: left center;
+  transition: transform 1s ease;
+}
+
+.bow {
+  position: absolute;
+  top: -24px;
+  left: 53px;
+  font-size: 38px;
+  z-index: 4;
+}
+
+.gift.open .lid {
+  transform: rotate(-120deg) translateY(-20px);
+}
+
+.instruction {
+  color: #ffc6e0;
+  font-size: 17px;
+  margin-top: 25px;
+  animation: glow 1.5s infinite;
+}
+
+@keyframes glow {
+  50% { opacity: .45; }
+}
+
+.message {
+  display: none;
+  font-size: 25px;
+  color: #ffd0e6;
+  line-height: 1.5;
+  text-shadow: 0 0 15px #ff75b2;
+  animation: appear 1.5s ease;
+  margin: 15px 0;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.final {
+  display: none;
+  width: 100%;
+  max-width: 430px;
+  animation: appear 2s ease;
+}
+
+.final h2 {
+  color: #ffd4e7;
+  font-size: 27px;
+}
+
+.bouquet {
+  margin: 25px 0;
+  padding: 25px 10px;
+  border: 1px solid #ffc2dd66;
+  border-radius: 25px;
+  background: linear-gradient(145deg,#ffffff20,#ff9bc51a);
+  box-shadow: 0 0 30px #ff91c044;
+}
+
+.flowers {
+  font-size: 48px;
+  line-height: 1.5;
+}
+
+.stems {
+  font-size: 35px;
+}
+
+.gifts {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.item {
+  background: #ffffff18;
+  border: 1px solid #ffffff30;
+  border-radius: 15px;
+  padding: 17px 5px;
+  font-size: 16px;
+}
+
+.item span {
+  display: block;
+  font-size: 37px;
+  margin-bottom: 8px;
+}
+
+.love {
+  color: #ffc9e1;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-top: 25px;
+}
+
+button {
+  padding: 13px 25px;
+  border: none;
+  border-radius: 30px;
+  background: #ff9fc5;
+  color: #50132e;
+  font-size: 16px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.hidden { display: none !important; }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>A Little Surprise For You ❤️</h1>
+
+<p class="subtitle">
+Something special is waiting inside...
+</p>
+
+<div id="stage" class="stage">
+
+<div class="gift" id="gift" onclick="openGift()">
+
+<div class="base">
+<div class="ribbon"></div>
+</div>
+
+<div class="lid"></div>
+<div class="bow">🎀</div>
+
+</div>
+</div>
+
+<div id="instruction" class="instruction">
+✨ Tap the gift box to open ✨
+</div>
+
+<div id="message" class="message">
+Your wait is near to end :) 💗
+</div>
+
+<div id="final" class="final">
+
+<h2>For Anurupa 🖤🌼</h2>
+
+<p>
+Finally, your little surprise is here! 💝
+</p>
+
+<div class="bouquet">
+
+<div class="flowers">
+🤍🌸🤍<br>
+🌸🩷🌸<br>
+🤍🌸🩷
+</div>
+
+<div class="stems">🌿🌿🌿</div>
+
+<h3>A Bouquet Full of Love</h3>
+
+<p>Beautiful Lilies, specially for you 🌷</p>
+
+</div>
+
+<h2>Some More Little Surprises 🎁</h2>
+
+<div class="gifts">
+
+<div class="item">
+<span>🍫</span>
+Chocolates
+</div>
+
+<div class="item">
+<span>🧁</span>
+Sweet Pastries
+</div>
+
+<div class="item">
+<span>🧸</span>
+Cute Teddy
+</div>
+
+<div class="item">
+<span>💍</span>
+Jewellery
+</div>
+
+<div class="item">
+<span>💌</span>
+Love Letter
+</div>
+
+<div class="item">
+<span>🎀</span>
+Special Gifts
+</div>
+
+</div>
+
+<div class="love">
+You deserve all the beautiful things<br>
+in this world. ❤️<br><br>
+With lots of love... 🖤🌼
+</div>
+
+<button onclick="location.reload()">
+Relive the Surprise ↻
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+let count = 0;
+let opening = false;
+
+function openGift() {
+
+if (opening || count >= 4) return;
+
+opening = true;
+
+const gift = document.getElementById("gift");
+const stage = document.getElementById("stage");
+const instruction = document.getElementById("instruction");
+const message = document.getElementById("message");
+const final = document.getElementById("final");
+
+gift.classList.add("open");
+
+count++;
+
+instruction.innerHTML = "✨ Opening your surprise...";
+
+setTimeout(function() {
+
+if (count === 4) {
+
+stage.classList.add("hidden");
+instruction.classList.add("hidden");
+message.classList.add("hidden");
+final.style.display = "block";
+
+return;
+}
+
+gift.remove();
+
+const newGift = document.createElement("div");
+
+newGift.className = "gift";
+newGift.id = "gift";
+newGift.onclick = openGift;
+
+newGift.innerHTML = `
+<div class="base">
+<div class="ribbon"></div>
+</div>
+<div class="lid"></div>
+<div class="bow">🎀</div>
+`;
+
+stage.appendChild(newGift);
+
+if (count === 3) {
+message.style.display = "block";
+instruction.innerHTML = "💗 One last surprise is waiting...";
+} else {
+instruction.innerHTML = "💝 Open the next box...";
+}
+
+opening = false;
+
+}, 1100);
+
+}
+
+</script>
+
+</body>
+</html>
